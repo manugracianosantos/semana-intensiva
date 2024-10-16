@@ -1,0 +1,17 @@
+/*
+    #id{
+        Aparece só uma vez no código
+    }
+
+    .class {
+    }
+
+    tag {
+    }
+*/
+
+p {
+    font-size: large;
+    color: blueviolet;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+}
