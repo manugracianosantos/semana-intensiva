@@ -1,3 +1,8 @@
+
+<?php 
+    include "db.php";  /* falando que todas as funções que estão dentro dessa página võa poder ser lidas nesse arquivo */ /* linkagem entre as páginas *//* usa só quando a gente chaama o metodo no action */
+?>
+
 <!doctype html>
 <html lang="pt-br">
   <head>
@@ -11,7 +16,7 @@
 </head>
   <body>
     <div class="container">
-        <form action="principal.html" method="post">
+        <form action="#" method="post"> <!-- pode usar o metodo ou o db.php-->
             <div id="div-principal">
                 <div class="input-group">
                     <label for="exampleFormControlInput1" class="form-label">Usuário</label> &nbsp;
@@ -20,7 +25,7 @@
                 <br>
                 <div class="input-group">
                     <label for="exampleFormControlInput1" class="form-label">Senha</label> &nbsp;&nbsp;&nbsp;<!-- for="exampleFormControlInput1" > usado para leitores de tela-->
-                    <input type="password" name="password" class="form-control" id="inputSenha" placeholder="*********"> <!--Campo de senha é no máximo *******-->
+                    <input type="password" name="passwd" class="form-control" id="inputSenha" placeholder="*********"> <!--Campo de senha é no máximo *******-->
                 </div>
             </div>
             <button type="submit" role="" class="btn btn-primary">Enviar</button>
@@ -29,3 +34,26 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
   </body>
 </html>
+
+<?php 
+
+  $username = "manu";
+  $senha  = "123";
+
+  if(isset($_POST)) {
+      if($_POST['user'] == $username && $_POST['passwd'] == $senha) { //se no post o user for igual a variavel username ok
+          header("Location:principal.php"); //redirecional para página principal
+      }
+      else{
+          echo(" <div class='alert-danger' role='alert'>
+                  Usuário e/ou senha incorretos!
+                  </div>
+          ");
+      }
+  }
+  else {
+      header("Location:login.php");
+  }
+
+
+?>

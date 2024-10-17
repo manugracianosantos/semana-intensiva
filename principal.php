@@ -1,4 +1,8 @@
-<!DOCTYPE html>
+<?php 
+  $x = 2;
+
+?>
+
 <html lang="pt-br">
 <head>
     <meta charset="UTF-8">
@@ -21,7 +25,7 @@
               <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                   <li class="nav-item">
-                    <a id="1" role="button" class="nav-link active" aria-current="page" href="#" onclick="exibirMensagem(); alterarEstilo(this.id)" ondblclick="alterarEstilo2()"> Home </a> <!-- alterarEstilo(this.id) PEGA O ID DESSE ELEMENTO-->
+                    <a id="1" role="button" class="nav-link active" aria-current="page" href="#" onclick="alterarEstilo(this.id)" ondblclick="alterarEstilo2(this.id)"> Home </a> <!-- alterarEstilo(this.id) PEGA O ID DESSE ELEMENTO-->
                   </li>
                   <li class="nav-item">
                     <a class="nav-link" href="#">Link</a>
@@ -71,7 +75,14 @@
                 </button>
               </div>
     </div>
-    
+    <?php 
+        if($x==1) {    
+    ?>
+    <div class="col">
+      oi
+    </div>
+    <?php } ?>
+
 </div>
 
     </div>
