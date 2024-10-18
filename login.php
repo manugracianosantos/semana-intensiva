@@ -1,6 +1,6 @@
 
 <?php 
-    include "db.php";  /* falando que todas as funções que estão dentro dessa página võa poder ser lidas nesse arquivo */ /* linkagem entre as páginas *//* usa só quando a gente chaama o metodo no action */
+    $x=1;
 ?>
 
 <!doctype html>
@@ -28,7 +28,7 @@
                     <input type="password" name="passwd" class="form-control" id="inputSenha" placeholder="*********"> <!--Campo de senha é no máximo *******-->
                 </div>
             </div>
-            <button type="submit" role="" class="btn btn-primary">Enviar</button>
+            <button name="enviar" type="submit" role="" class="btn btn-primary">Enviar</button>
         </form>
     </div>  
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
@@ -36,23 +36,27 @@
 </html>
 
 <?php 
+//imprimir dados do array
+   
 
-  $username = "manu";
-  $senha  = "123";
 
-  if(isset($_POST)) {
+  if(isset($_POST['enviar'])) {
+    
+        $username = "manu";
+        $senha  = "123";
+
+    print_r($_POST); //exibir as informações
+
       if($_POST['user'] == $username && $_POST['passwd'] == $senha) { //se no post o user for igual a variavel username ok
-          header("Location:principal.php"); //redirecional para página principal
+        header("Location:principal.php"); //redirecional para página principal
       }
       else{
-          echo(" <div class='alert-danger' role='alert'>
+          echo(" 
+                  <div class='alert-danger' role='alert'>
                   Usuário e/ou senha incorretos!
                   </div>
           ");
       }
-  }
-  else {
-      header("Location:login.php");
   }
 
 
