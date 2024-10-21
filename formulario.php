@@ -25,19 +25,21 @@
                     <div class="collapse navbar-collapse" id="navbarSupportedContent">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                             <li class="nav-item">
-                                <a name="inserir" id="1" type="submit" class="nav-link active" aria-current="page" href="formulario.php?id=1">Inserir</a> <!--o id vai ser o código usado para quando dar um submit para mesma página ele vai lá em baixo e da um include na outrta página-->
+                                <a id="1" type="submit" class="nav-link active" aria-current="page" href="formulario.php?id=1">Inserir</a><!-- id=1 é o codigo da pagina-->
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Pesquisar</a>
+                                <a id="2" class="nav-link"  href="formulario.php?id=2">Pesquisar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Atualizar</a>
+                                <a id="3" class="nav-link"  href="formulario.php?id=3">Atualizar</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Excluir</a>
+                                <a id="4"  class="nav-link"  href="formulario.php?id=4">Excluir</a>
                             </li>
                         </ul>
                 </form>
+
+                
             </div>
             </div>
         </nav>
@@ -46,13 +48,18 @@
 
     <?php
     //print_r($_GET);
-    if (isset($_GET['id'])) {
-
-        if ($_GET['id'] == "1") {
-            include "cadastrousuario.php";
+    if(isset(($_GET['id']))){
+        if($_GET['id'] == "1"){
+            include "cadastroUsuario.php";
+        }else if($_GET['id'] == "2"){
+            include "pesquisar.php";
+        } else if($_GET['id'] == "3"){
+            include "atualizarusuarios.php";
+        }else if($_GET['id'] == "4"){
+            include "excluirusuarios.php";
         }
-    }
 
+    }
     ?>
 
 
